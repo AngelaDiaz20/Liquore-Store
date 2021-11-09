@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lanzamiento - cuenta regreiva</title>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'liquore_store_app/css/countdown_estilos.css' %}">
+</head>
+<body>
+	
+	<div class="portada" id="portada">
+		<div class="header" style="color: white; text-align: center;">
+			<h1 class="logotipo">Liquore Store</h1>
+			<p class="mensaje">Lanzamiento de nuevo producto</p>
+		</div>
+
+		<div id="cuenta" style="text-align: center;"></div>
+
+		<div class="redes-sociales">
+			<br><a href="{% url 'Home' %}" class="btn-red-social" style="margin-left: 640px; width: 16%; text-align: center;"><i > Ir a la página </i></a>
+		</div>
+	</div>
+
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="{% static 'liquore_store_app/js/simplyCountdown.min.js' %}"></script>
+	<script src="{% static 'liquore_store_app/js/countdown.js' %}"></script>
+</body>
+</html>

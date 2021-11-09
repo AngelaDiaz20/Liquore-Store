@@ -1,0 +1,178 @@
+{% extends "liquore_store_app/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+
+      </div>
+    </section>
+
+    <section class="inner-page">
+
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" style="color: darkkhaki;" aria-current="page" href="{% url 'Carrito' %}"> >Resumen de la compra</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#"> >Ingresa tus datos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#"> >Confirmar pago</a>
+        </li>
+      </ul>
+
+
+    <!--<h2 style="color: goldenrod; text-align: center;">CARRITO DE COMPRAS</h2><br><br>-->
+
+    <div style="align-items: center; margin-left: 375px; margin-top: 40px; width: 160%;">
+    
+      <table class="table table-dark table-hover" style="color:white;  width: 30%;">
+      
+        <thead>
+
+          <tr>
+
+            <th colspan="5" class="text-center" style="color: darkseagreen;">
+
+              TUS PRODUCTOS
+
+            </th>
+
+          </tr>
+
+          <tr class="text-center" style="color:lightgreen;">
+
+            <th>Producto</th>
+            <th></th>
+            <th>Volumen</th>
+            <th>Cantidad</th>
+            <th>Suma</th>
+
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          {% if request.session.carro.items %}  
+
+            {% for key, value in request.session.carro.items %}
+      
+              <tr class="align-middle text-center">
+                <td><img src="{{value.imagen}}" style="width:50%;" ></td>
+                <td>{{value.nombre}}</td>
+                <td>{{value.volumen}}</td>
+                <td>{{value.cantidad}}</td>
+                <td>
+                  <a href="{% url 'agregar_btn' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                  <a href="{% url 'restar' value.producto_id %}" class="btn btn-sm btn-success">-</a> &nbsp;
+                  <a href="{% url 'eliminar' value.producto_id %}" class="btn btn-sm btn-danger" style="align-items: flex-start;" >x</a>
+                  ${{value.precio}}
+                </td>
+              </tr>
+
+            {% endfor %} 
+
+          {% else %}  
+
+            <tr>
+
+              <td colspan="5">
+                <div class="=alert alert-danger text center">
+                  <br>
+                  Sin productos
+                  </br>
+                </div>
+              </td>
+
+            </tr>
+
+          {% endif %}
+
+
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th colspan="5" style="text-align: right; color: white;"> <br>
+
+              Total: {{importe_total_carro}}
+
+            </th>
+          </tr>
+        </tfoot>
+
+        <tfoot>
+          <tr>
+            <th colspan="5" style="text-align: right; color: white;"> <br>
+
+              Subtotal: {{importe_total_carro}}
+
+            </th>
+          </tr>
+        </tfoot>
+
+      </table>
+
+    </div>
+
+    <table class="table">
+
+    <a href="{% url 'registroDatos' %}" class="btn btn-success" style="margin-left: 828px; width: 150px;">Ir a pagar</a>
+  
+
+    <div style="width:36%; margin-left:150px;" id="paypal-button-container"></div>
+
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=AZfXDPzduSQzTOhDDTn4Ng-zyHLxzbolN3-y-YuTcTm_cB_C48MX772ipLTbBUuGexOD1YkBvcMx8Jag"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+    </script>
+
+    <!--<script>
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          // This function sets up the details of the transaction, including the amount and line item details.
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '0.01'
+              }
+            }]
+          });
+        },
+        onApprove: function(data) {
+          return fetch('/Pago/', {
+            method:'POST',
+            headers: {
+              'content-type': 'application/json',
+              'X-CSRFToken':csrftoken
+            },
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          }).then(function(res) {
+            return res.json();
+          }).then(function(details) {
+            alert('Transaction approved by ' + details.payer_given_name);
+          })
+        }
+      }).render('#paypal-button-container');
+      //This function displays Smart Payment Buttons on your web page.
+    </script> -->
+
+    </section>
+
+    <section class="breadcrumbs">
+        <div class="container">
+  
+        </div>
+    </section>
+    
+
+  </main><!-- End #main -->
+
+
+{% endblock %}
+

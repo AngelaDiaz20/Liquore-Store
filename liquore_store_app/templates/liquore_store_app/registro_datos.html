@@ -1,0 +1,163 @@
+{% extends "liquore_store_app/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<main id="main">
+  <section class="breadcrumbs">
+    <div class="container">
+
+    </div>
+  </section>
+
+<section class="inner-page">
+
+  <ul class="nav justify-content-center" style="background-color: rgba(0, 0, 0, 0.925);">
+      <li class="nav-item">
+        <a class="nav-link active" style="color: darkkhaki;" aria-current="page" href="{% url 'Carrito' %}"> >Resumen de la compra</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" style="color: darkkhaki;" href="#"> >Ingresar datos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"> >Confirmar pago</a>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link href="{% static '/liquore_store_app/css/style_form.css' %}" rel="stylesheet">
+  
+    
+  <section class="contact-box">
+    <div class="row no-gutters bg-dark">
+        <div class="col-xl-5 col-lg-12 register-bg">
+        </div>
+        <div class="col-xl-7 col-lg-12 d-flex">
+              <div class="container align-self-center p-6">
+                  <h1 class="font-weight-bold mb-3">Resumen de pedido</h1>
+      
+                  <p class="text-muted mb-5">Solicitamos únicamente la información esencial para la finalización de la compra.</p>
+
+                  <form method="POST" class="needs-validation" novalidate>
+                    {% csrf_token %} 
+
+                    {% if messages %}
+                      {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                          {{message}}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+
+                      <div class="form-row mb-2">
+                          <div class="form-group col-md-6">
+                              <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
+                              <input type="text" name="nombre_cliente" class="form-control" placeholder="Tu nombre" value="" required>
+                              <div class="valid-feedback">¡Ok válido!</div>
+                              <div class="invalid-feedback">Complete el campo</div>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
+                              <input type="text" name="apellido" class="form-control" placeholder="Tu apellido" value="" required>
+                              <div class="valid-feedback">¡Ok válido!</div>
+                              <div class="invalid-feedback">Complete el campo</div>
+                          </div>
+                      </div>
+                      <div class="form-group mb-3">
+                          <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
+                          <input type="email" name="email" class="form-control" placeholder="Ingresa tu correo electrónico" value="" required> 
+                          <div class="valid-feedback">¡Ok válido!</div>
+                          <div class="invalid-feedback">Complete el campo</div>
+                      </div>
+                      <div class="form-row mb-2">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Cédula de ciudadanía <span class="text-danger">*</span></label>
+                            <input type="number" name="cedula" class="form-control" placeholder="Ingresa número de cédula" value="" required>
+                            <div class="valid-feedback">¡Ok válido!</div>
+                            <div class="invalid-feedback">Complete el campo</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Número teléfonico <span class="text-danger">*</span></label>
+                            <input type="number" name="telefono" class="form-control" placeholder="Ingresa número telefono" value="" required> 
+                            <div class="valid-feedback">¡Ok válido!</div>
+                            <div class="invalid-feedback">Complete el campo</div>
+                        </div>
+                    </div>
+                      <div class="form-group mb-3">
+                          <label class="font-weight-bold">Dirección de envío <span class="text-danger">*</span></label>
+                          <input type="text" name="direccion" class="form-control" placeholder="Ingresa tu dirección de envío" value="" required>
+                          <div class="valid-feedback">¡Ok válido!</div>
+                          <div class="invalid-feedback">Complete el campo</div>
+                      </div>
+                      <div class="form-group mb-5">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox">
+                              <label class="form-check-label text-muted">Al seleccionar esta casilla aceptas nuestro aviso de privacidad y los términos y condiciones</label>
+                          </div>
+                      </div>
+                   
+                      <button type="submit" class="btn btn-success" href="{% url 'confPago' %}" >Enviar</button>
+                      <a class="btn btn-primary" href="{% url 'confPago' %}" role="button">Continuar pago</a>
+
+                  </form>
+                  <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © Liquore Store S.A.S</small>
+              </div>
+        </div>
+    </div>
+  </section>
+</form>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'liquore_store_app/js/form_registro.js' %}"></script> 
+
+  <section class="breadcrumbs">
+      <div class="container">
+
+      </div>
+  </section>
+  
+
+</main><!-- End #main -->  
+
+{% endblock %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="{% static '/liquore_store_app/css/style_form.css' %}" rel="stylesheet">
+
+    <title>Regitro de datos</title>
+
+  </head>
+  <body>
+
+      
+
+  </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+    
+</html>
+

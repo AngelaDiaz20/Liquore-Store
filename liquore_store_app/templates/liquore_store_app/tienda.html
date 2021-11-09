@@ -1,0 +1,97 @@
+{% extends "liquore_store_app/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+
+      </div>
+    </section>
+
+    <section class="inner-page">
+
+    <div class="container">
+
+      <div class="row">
+
+    {% for producto in productos %}
+
+        <div class="col-md-3">
+
+        <div class="card" style="width:100%; margin: 5px 5px;">
+
+          <img src="{{producto.imagen.url}}" class="card-img-top">
+
+          <div class="card-body" style="text-align: center;">
+
+              <h7 class="card-title" style="color: black;">{{producto.nombre}}</h7>
+
+              <p class="card-text" style="color: black;">{{producto.volumen}}</p>
+
+              <p class="card-text" style="color: rgb(5, 121, 30);">&nbsp;${{producto.precio}}</p>
+
+          </div> <!-- cierre car body -->
+
+          <div class="card-footer text-center">
+            <a href="{% url 'agregar' producto.id %}" class="btn btn-success">Agregar al carrito</a>
+          </div>
+
+
+
+          <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Descripción </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 40%; margin-left: 10cm;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">{{producto.nombre}}</h5>
+
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3 style="color: black;">{{producto.nombre}}</h3>
+              <img src="{{producto.imagen.url}}" class="card-img-top" style="width: 70%; margin-left: 2cm;">
+              <p style="color: black;"><strong>Volumen:</strong>{{producto.volumen}}</p>
+              <p style="color:black;"><strong>Precio:</strong>{{producto.precio}}</p>
+              <p style="color:black;"><strong>Grados de alcohol:</strong>{{producto.grados}}</p>
+              <p style="color: black;">{{producto.descripcion}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="{% url 'agregar' producto.id %}" class="btn btn-success">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        </div> <!-- cierre card -->
+
+      </div> <!-- cierre col -->
+  
+    {% endfor %}
+
+      </div> <!-- cierre row -->
+
+    </div> <!-- cierre container -->
+
+    
+
+
+        </section>
+
+        <section class="breadcrumbs">
+            <div class="container">
+      
+            </div>
+        </section>
+    
+
+  </main><!-- End #main -->
+
+
+{% endblock %}
+

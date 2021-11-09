@@ -1,0 +1,825 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es-eu">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Liquore Store</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'liquore_store_app/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'liquore_store_app/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'liquore_store_app/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'liquore_store_app/assets/vendor/aos/aos.css' %}" rel="stylesheet' %}">
+  <link href="{% static 'liquore_store_app/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'liquore_store_app/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'liquore_store_app/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'liquore_store_app/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'liquore_store_app/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'liquore_store_app/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.6.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone d-flex align-items-center"><span>301 222 91 39</span></i>
+        <i class="bi bi-clock d-flex align-items-center ms-4"><span> Lun-Dom: 11AM - 23PM</span></i>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Liquore Store</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about">Acerca</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Destacados</a></li>
+          <li><a class="nav-link scrollto" href="#specials">Artesanal</a></li>
+          <li><a class="nav-link scrollto" href="#events">Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Nuestro punto</a></li>
+          <li class="dropdown"><a href="#"><span>Políticas</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'polPrivacidad' %}">Políticas de privacidad</a></li>
+              <li><a href="{% url 'polEntrega' %}">Políticas de entrega</a></li>
+              <li><a href="{% url 'countdown' %}">Lanzamiento</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="{% url 'Tienda' %}" class="book-a-table-btn scrollto d-none d-lg-flex">Tienda</a>
+     
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Bienvenido a <span>Liquore Store</span></h1>
+          <h2>Toda la experiencia del licor online a un click de distancia.
+            Acompaña tus momentos al lado de tus seres queridos con excelentes vinos, licores y aperitivos. </h2>
+
+          <div class="btns">
+            <a href="{% url 'Tienda' %}" class="btn-menu animated fadeInUp scrollto">¡Vamos a la tienda!</a>
+          </div>
+        </div>
+        <!--<div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div>-->
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{% static 'liquore_store_app/assets/img/about.jpg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Los más dignos proporcionan placer, como si fueran a tomarse los placeres del cuerpo</h3>
+            <p class="fst-italic">
+              Liquore Store nace como empresa en el año 1982, 100% colombiana dedicándose a la venta y distribución de licores en general
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Posicionamos y comercializamos productos que mejoren la calidad de vida, cumpliendo y 
+              aportando positivamente a los empleados, a la sociedad, al estado y los accionistas</li>
+              <li><i class="bi bi-check-circle"></i> Somos empresa líder en Colombia en la comercialización de productos de alto 
+              prestigio internacional orientados a generar calidad de vida, placer y bienestar.</li>
+              <li><i class="bi bi-check-circle"></i> Pertenecemos a la Federación Internacional de Vinos y Espirituosos (FIVS), 
+                organización que fomenta el intercambio de información y de buenas prácticas en el sector.</li>
+            </ul>
+            <p>
+              Brindamos a nuestros clientes la más variada selección de licores importados y nacionales, ofreciendo calidad en nuestros productos 
+              y el mejor servicio para satisfacer los gustos mas exigentes
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>¿Por qué nosotros?</h2>
+          <p>¿Por qué elegirnos?</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+              <span>01</span>
+              <h4>Variedad en licores</h4>
+              <p>Brindamos a nuestros clientes la más variada selección de licores importados y nacionales, ofreciendo calidad en nuestros productos 
+                y el mejor servicio para satisfacer los gustos mas exigentes</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="200">
+              <span>02</span>
+              <h4>Envíos gratuitos</h4>
+              <p>Olvídate de los gastos de envío. ¡Recibe tus pedidos gratis sin importar el valor de la compra!</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="300">
+              <span>03</span>
+              <h4> Excelente atención </h4>
+              <p> Estamos dispuestos a ayudar cuando ni siquiera has pedido nuestra ayuda, adelantarnos a lo que necesitas y cubrir tus necesidades de 
+                manera eficaz</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Productos destacados</h2>
+          <p>Conoce nuestra variedad de productos destacados del mes</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+              <li data-filter="*" class="filter-active">Todos</li>
+              <li data-filter=".filter-starters">Whiskys</li>
+              <li data-filter=".filter-salads">Vinos</li>
+              <li data-filter=".filter-specialty">Cervezas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'liquore_store_app/assets/img/productos/OldParr.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Whisky old parr</a><span>$108.000</span>
+            </div>
+            <div class="menu-ingredients">
+              750 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="{% static 'liquore_store_app/assets/img/productos/Corona.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Cerveza Corona Extra Six Pack</a><span>$23.000</span>
+            </div>
+            <div class="menu-ingredients">
+              355 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'liquore_store_app/assets/img/productos/Glenlivet.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Whisky Glenlivet</a><span>$136.700</span>
+            </div>
+            <div class="menu-ingredients">
+              700 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'liquore_store_app/assets/img/productos/RamonBilbao.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Vino Tinto Ramón Bilbao</a><span>$98.900</span>
+            </div>
+            <div class="menu-ingredients">
+              750 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="{% static 'liquore_store_app/assets/img/productos/BBCLagger.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Cerveza BBC Lagger six pack</a><span>$20.100</span>
+            </div>
+            <div class="menu-ingredients">
+              330 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'liquore_store_app/assets/img/productos/ChivasRegal.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Whisky Chivas Regal</a><span>$123.700</span>
+            </div>
+            <div class="menu-ingredients">
+              700 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'liquore_store_app/assets/img/productos/Muga.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Vino Tinto Mugra Tempranillo</a><span>$137.900</span>
+            </div>
+            <div class="menu-ingredients">
+              750 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'liquore_store_app/assets/img/productos/ClubColombiaRoja.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Cerveza Club Colombia Roja six pack </a><span>$14.000</span>
+            </div>
+            <div class="menu-ingredients">
+              330 mL
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="{% static 'liquore_store_app/assets/img/productos/GatoNegro.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Vino Tinto Gato Negro 9 vidas</a><span>$49.900</span>
+            </div>
+            <div class="menu-ingredients">
+              750 mL
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Menu Section -->
+
+    <!-- ======= Specials Section ======= -->
+    <section id="specials" class="specials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Artesanal</h2>
+          <p>Nuestros productos artesanales</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Cerveza artesanal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Lícor de café</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Lícor de chocolate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Lícor de coco</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Lícor de naranja</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Cheve Rosé</h3>
+                    <p class="fst-italic">Cerveza artesanal </p>
+                    <p> Rosé, la versatilidad de las frambuesas en una botella de cerveza. 
+                      Su fino aroma y su dulce y burbujeante personalidad son los que más destacan, juntos con los frutos rojos complementarios
+                      que proporcionan una frecura naturl, un equilibrio perfecto que termina con toques cítricoa  </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'liquore_store_app/assets/img/artesanal/cervezaArtesanal.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Liquorffe</h3>
+                    <p class="fst-italic"> Lícor de café </p>
+                    <p> Liquore coffe, es una mezcla de café seleccionado a mano y ron de 8 años, el cual se dejó reposar en barrilles de roble para garantizar su sabor suave y compljo al paladar.
+                      Es resultado de una triple destilación con granos de café de quíntuple selección y una tostión específica. Nuestra producción artesanal nos permite usar ingredientes naturales y
+                      evitando así el uso de esencias y sub productos químicos </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'liquore_store_app/assets/img/artesanal/licorCafe.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Chocoliquore</h3>
+                    <p class="fst-italic"> Lícor de chocolate </p>
+                    <p> El sabor de este licor proviene de los granos de chocolate con un tenue aroma a vainilla.
+                      Ideal para acompañar un delicioso postre o cualquier comida </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'liquore_store_app/assets/img/artesanal/licorChocolate.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Liquocor</h3>
+                    <p class="fst-italic"> Lícor de coco </p>
+                    <p> Hecho a base de maceraciones de pulpa de coco y ron blanco para darle un toque diferente y distintivo.
+                      Producto 100% natural sin colorantes ni aditivos.
+                      Suave al paladar, con sabor dulce a nuez y coco, además de un toque gaseosos debido a los aceites y extractos de coco.
+                      Puede tomar como aperitivo o para elaborar varios cócteles, entre ellos, la piña colada. </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'liquore_store_app/assets/img/artesanal/licorCoco.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Liquoranja</h3>
+                    <p class="fst-italic"> Lícor de naranja </p>
+                    <p> Elaborada con naranjas locales, liquoranja es una bebida única que se puede tomar sola o con hielo, mezclada con diversas
+                      bebidas se pueden preparar cócteles y/0 también puede ser utilizado en cocina para preparar gran variedad de platos, como comidas
+                      o postres. </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'liquore_store_app/assets/img/artesanal/licorNaranja.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Specials Section -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Eventos</h2>
+          <p>Organiza tus eventos en nuestros salones</p>
+        </div>
+
+        <div class="events-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'liquore_store_app/assets/img/event-birthday.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Fiestas de cumpleaños</h3>
+                  <div class="price">
+                    <p><span>$600.000</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Nuestras fiestas son únicas y variadas, poseemos diseños temáticos especiales que incluyen decoración alusiva al tema de la 
+                    fiesta. Hasta el más mínimo detalle lo tenemos planeado y diseñado para hacer de su fiesta un evento inolvidable
+                  </p>
+                  <p class="fst-italic">
+                    Liquore Store Eventos, te ofrece varias opciones , escoge el que más se acomode a tu evento y despreocúpate que nosotros 
+                    te colaboramos.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Plan 50-70 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> Plan 70-90 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> item 90-100 invitados</li>
+                  </ul>
+                  <p>
+                    Cumplimos con todos los protocolos de bioseguridad requeridos. Reducimos el aforo de personas dado a la crisis sanitaria.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'liquore_store_app/assets/img/event-private.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Fiestas privadas</h3>
+                  <div class="price">
+                    <p><span>$980.000</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Nuestras fiestas son únicas y variadas, poseemos diseños temáticos especiales que incluyen decoración alusiva al tema de la 
+                    fiesta. Hasta el más mínimo detalle lo tenemos planeado y diseñado para hacer de su fiesta un evento inolvidable
+                  </p>
+                  <p class="fst-italic">
+                    Liquore Store Eventos, te ofrece varias opciones , escoge el que más se acomode a tu evento y despreocúpate que nosotros 
+                    te colaboramos.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Plan 50-70 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> Plan 70-90 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> item 90-100 invitados</li>
+                  </ul>
+                  <p>
+                    Cumplimos con todos los protocolos de bioseguridad requeridos. Reducimos el aforo de personas dado a la crisis sanitaria.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'liquore_store_app/assets/img/event-custom.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Fiestas personalizadas</h3>
+                  <div class="price">
+                    <p><span>$380.000</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Nuestras fiestas son únicas y variadas, poseemos diseños temáticos especiales que incluyen decoración alusiva al tema de la 
+                    fiesta. Hasta el más mínimo detalle lo tenemos planeado y diseñado para hacer de su fiesta un evento inolvidable
+                  </p>
+                  <p class="fst-italic">
+                    Liquore Store Eventos, te ofrece varias opciones , escoge el que más se acomode a tu evento y despreocúpate que nosotros 
+                    te colaboramos.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Plan 50-70 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> Plan 70-90 invitados</li>
+                    <li><i class="bi bi-check-circled"></i> item 90-100 invitados</li>
+                  </ul>
+                  <p>
+                    Cumplimos con todos los protocolos de bioseguridad requeridos. Reducimos el aforo de personas dado a la crisis sanitaria.
+                  </p>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Events Section -->
+
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Reservación</h2>
+          <p>Reserva uno de nuestros salones</p>
+        </div>
+
+        <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Tu teléfono" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Fecha" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Hora" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="number" class="form-control" name="people" id="people" placeholder="Número de personas" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Cargando</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Su reserva ha sido enviada. Le devolveremos la llamada o le enviaremos un correo electrónico para confirmar su reserva. ¡Gracias! </div>
+          </div>
+          <div class="text-center"><button type="submit">Reservar</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Book A Table Section -->
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Galería</h2>
+          <p>Algunas fotos de nuestros salones de eventos</p>
+        </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-1.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-2.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-3.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-4.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-4.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-5.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-5.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-6.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-6.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-7.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-7.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'liquore_store_app/assets/img/gallery/gallery-8.jpg' %}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{% static 'liquore_store_app/assets/img/gallery/gallery-8.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contacto</h2>
+          <p>¡Contactános!</p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Localización:</h4>
+                <p>Bogotá</p>
+              </div>
+
+              <div class="open-hours">
+                <i class="bi bi-clock"></i>
+                <h4>Horarios de apertura:</h4>
+                <p>
+                  Lunes - Domingo:<br>
+                  11:00 AM - 23:00 PM
+                </p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>liquore_store@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Líneas de atención:</h4>
+                <p>(1) 414 16 32 -301 222 91 39</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="" method="POST" role="form" class="php-email-form">
+              {% csrf_token %} 
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="8" placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Cargando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+              </div>
+              <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+            </form>
+
+          </div>
+
+          <!-- <p style="color: white;" >{{request.POST}}</p> -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info" style="text-align: justify;">
+              <h3>Liquore Store</h3>
+              <p> 
+                Bogotá <br>
+                Colombia<br><br>
+                <strong>Teléfono:</strong> (1) 414 16 32 - 301 222 91 39<br>
+                <strong>Email:</strong> disliquorestore@gmail.com<br>
+              </p>
+              
+              <div class="social-links mt-3" style="text-align: justify;">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100074349520655" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div> 
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <br><h4>Enlaces útiles</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'polEntrega' %}">Políticas de entrega</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'polPrivacidad' %}">Políticas de privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-logo">
+            <ul>
+              <img src="{% static 'liquore_store_app\img\Logo.png' %}" style="width: 70%;">
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-ley124" style="text-align: center;">
+            <br><br><h4>"DISFRUTA LO MEJOR DE TOMAR, SIN LO MALO DE EXCEDERTE"</h4>
+            <p >El exceso de alcohol es perjudicial para la salud. Ley 30 de 1986. Prohíbase el expendio de bebidas embriagantes a menores
+              de edad y mujeres embarazadas. Ley 124 de 1994.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Liquore Store S.A.S </span></strong>. Todos los derechos reservados
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'liquore_store_app/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'liquore_store_app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'liquore_store_app/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'liquore_store_app/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'liquore_store_app/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'liquore_store_app/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'liquore_store_app/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
